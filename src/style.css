@@ -30,6 +30,7 @@ header {
   width: 80%;
   padding: 15px 20px;
   font-size: 16px;
+  margin-right: 2px;
 }
 
 .search-form-submit {
@@ -37,7 +38,7 @@ header {
   color: #ffff;
   border: none;
   border-radius: 6px;
-  width: 15%;
+  width: 19%;
   padding: 15px 20px;
   font-size: 16px;
 }
