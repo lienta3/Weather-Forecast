@@ -6,15 +6,12 @@ function updateWeather(response) {
   temperatureElement.innerHTML = Math.round(temperature);
 
   let descriptionElement = document.querySelector("#description");
-  let description = response.data.condition.description;
   descriptionElement.innerHTML = response.data.condition.description;
 
   let humidityElement = document.querySelector("#humidity");
-  let humidity = response.data.temperature.humidity;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
 
   let windSpeedElement = document.querySelector("#windSpeed");
-  let windSpeed = response.data.wind.speed;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
 
   let timeElement = document.querySelector("#time");
