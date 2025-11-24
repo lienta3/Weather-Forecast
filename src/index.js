@@ -23,3 +23,5 @@ function searchResult(event) {
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchResult);
+
+searchCity("Sydney");
