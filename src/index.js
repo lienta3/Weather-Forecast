@@ -16,6 +16,24 @@ function updateWeather(response) {
   let windSpeedElement = document.querySelector("#windSpeed");
   let windSpeed = response.data.wind.speed;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
+
+  let timeElement = document.querySelector("#time");
+  let date = new Date(response.data.time * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  if (date.getMinutes < 10) {
+    date.getMinutes = `0${date.getMinutes}`;
+  }
+  timeElement.innerHTML = `${day} ${date.getHours()}:${date.getMinutes()}`;
 }
 
 function searchCity(city) {
