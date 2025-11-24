@@ -34,6 +34,9 @@ function updateWeather(response) {
     date.getMinutes = `0${date.getMinutes}`;
   }
   timeElement.innerHTML = `${day} ${date.getHours()}:${date.getMinutes()}`;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}">`;
 }
 
 function searchCity(city) {
