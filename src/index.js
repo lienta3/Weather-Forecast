@@ -11,11 +11,11 @@ function updateWeather(response) {
 
   let humidityElement = document.querySelector("#humidity");
   let humidity = response.data.temperature.humidity;
-  humidityElement.innerHTML = response.data.temperature.humidity;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
 
-  let windSpeedElement = document.querySelector("#wind");
+  let windSpeedElement = document.querySelector("#windSpeed");
   let windSpeed = response.data.wind.speed;
-  windSpeedElement.innerHTML = response.data.wind.speed;
+  windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
 }
 
 function searchCity(city) {
