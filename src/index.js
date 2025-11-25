@@ -27,6 +27,7 @@ function updateWeather(response) {
   ];
   let day = days[date.getDay()];
 
+  let minutes = date.getMinutes();
   if (date.getMinutes < 10) {
     date.getMinutes = `0${date.getMinutes}`;
   }
@@ -50,7 +51,32 @@ function searchResult(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+<div class="weather-forecast-day">
+           <div class="weather-forecast-date">${day}</div>
+           <div class="weather-forecast-icon">🌤</div>
+           <div class="weather-forecast-temperatures">
+             <div class="weather-forecast-temperature">
+               <strong>32°</strong>
+             </div>
+             <div class="weather-forecast-temperature">19°</div>
+           </div>
+         </div>
+         `;
+  });
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchResult);
 
 searchCity("Sydney");
+displayForecast();
