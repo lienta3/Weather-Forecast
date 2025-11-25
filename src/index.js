@@ -18,6 +18,8 @@ function updateWeather(response) {
 
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
   let days = [
     "Sunday",
     "Monday",
@@ -29,11 +31,10 @@ function updateWeather(response) {
   ];
   let day = days[date.getDay()];
 
-  let minutes = date.getMinutes();
-  if (date.getMinutes < 10) {
-    date.getMinutes = `0${date.getMinutes}`;
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
   }
-  timeElement.innerHTML = `${day} ${date.getHours()}:${date.getMinutes()}`;
+  timeElement.innerHTML = `${day} ${hours}:${minutes}`;
 
   let iconElement = document.querySelector("#icon");
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}">`;
