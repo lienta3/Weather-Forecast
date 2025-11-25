@@ -102,7 +102,7 @@ main {
 }
 
 .weather-forecast-icon {
-  font-size: 16px;
+  width: 100%;
   text-align: center;
   margin-bottom: 10px;
 }
